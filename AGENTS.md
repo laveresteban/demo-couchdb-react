@@ -30,7 +30,8 @@ COUCHDB_URL=http://localhost:5985 npm test   # in server/
 `.github/workflows/ci.yml` checks out couchdb-node `main` into a sibling folder
 to satisfy the `file:` link. So the demo is tested against SDK `main`, whatever
 branch a local SDK checkout is on. Once the SDK is on npm, switch the
-dependency to a version range and drop the second checkout.
+dependency to a version range, drop the second checkout, and add `/server`
+to `.github/dependabot.yml` (Dependabot cannot resolve the `file:` link).
 
 ## Decisions
 

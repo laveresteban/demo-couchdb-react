@@ -5,8 +5,10 @@ updates:
     schedule: { interval: weekly }
     groups:
       actions: { patterns: ["*"] }
+  # Not /server: its file:../../couchdb-node link can't resolve in Dependabot's
+  # checkout. Add it back once couchdb-node is on npm.
   - package-ecosystem: npm
-    directories: [/server, /web]
+    directory: /web
     schedule: { interval: weekly }
     groups:
       npm: { patterns: ["*"] }
